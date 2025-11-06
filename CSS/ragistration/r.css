@@ -1,0 +1,62 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+#blueDiv{
+ background-color: blue;
+  width:60rem;
+  height: 30rem;
+
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 100px;
+}
+
+#whiteDiv{
+
+background-color: white;
+width: 500px;
+border: 2px solid black;
+margin: auto;
+
+
+}
+#risForm{
+    text-align: center;
+    padding: 80px; 
+     
+}
+
+#input{
+      border-bottom: 2px solid black;
+  width: 200px;
+  display: flex;
+  margin-left: 10px;
+   margin-bottom: 15px;
+ 
+}
+#icon{
+    margin-right: 15px;
+}
+#name{
+    outline: none;
+}
+#checkbox{
+    display: flex;
+}
+
+#re{
+ text-decoration: underline;
+ text-decoration-color:blue ;
+}
+
+button{
+  background-color: blue;
+  text-align:center;
+  color: white;
+  width: 20rem;
+  height: 2rem;
+  
+  margin-top: 20px;
+}

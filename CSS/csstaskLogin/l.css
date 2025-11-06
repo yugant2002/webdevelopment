@@ -1,0 +1,75 @@
+body{
+ margin: 0px;
+ padding: 0px; 
+}
+.blueDiv{
+  background-color: blue;
+  width:60rem;
+  height: 30rem;
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 100px;
+
+ 
+}
+
+.whiteDiv{
+background-color: white;
+width: 500px;
+border: 2px solid black;
+margin: auto;
+
+
+}
+
+
+.LoginForm{
+  text-align: center;
+ padding: 100px;
+
+}
+
+input{
+  border:none;
+  margin-left: 10px;
+  outline: none;
+ 
+}
+
+.email{
+  border-bottom: 2px solid black;
+  width: 200px;
+  display: flex;
+  margin-left: 20px;
+ 
+}
+.third{
+  display: flex;
+  margin-top: 30px;
+ 
+
+}
+
+.a{
+  margin-left: 20px;
+  
+}
+
+button{
+  background-color: blue;
+  text-align:center;
+  color: white;
+  width: 20rem;
+  height: 2rem;
+  
+  margin-top: 20px;
+}
+
+#Sign{
+  margin-left:2rem;
+  color: blue;
+  
+}

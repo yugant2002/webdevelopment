@@ -1,0 +1,25 @@
+#d1{
+    border: 2px solid #000;
+    width: 300px;
+    height: 100px;
+    font-size: 50px;
+    background-color: aqua;
+    margin: 50px;
+    padding: 80px;
+    background: #2A7B9B;
+background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+}
+#d2{
+     border: 2px solid #000;
+    width: 300px;
+    height: 100px;
+    font-size: 50px;
+    
+    margin: 50px;
+    padding: 80px;
+    background:linear-gradient(90deg,red ,blue,green,) ;
+    background-clip :text;
+    background: #9b2a83;
+background: linear-gradient(90deg, rgba(155, 42, 131, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+}
