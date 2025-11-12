@@ -1,0 +1,26 @@
+#baap{
+    border: 1px solid black;
+    width: 700px;
+    height: 700px;
+    background-color: rgb(226, 8, 81);
+}
+#mainDiv{
+    border: 1px solid black;
+    width: 700px;
+    height: 700px;
+    background-color: rgb(47, 248, 255);
+   display: grid;
+   grid-template-columns:100px 100px 100px;
+   justify-content: center;
+   align-items: end;
+   justify-items: center;
+}
+.subDiv{
+    border: 1px solid rgb(10, 9, 9);
+    width: 40px;
+    height: 40px;
+    background-color: rgb(245, 57, 229);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

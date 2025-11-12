@@ -2,6 +2,10 @@ body{
  margin: 0px;
  padding: 0px; 
 }
+#log{
+    text-decoration: underline;
+  text-decoration-color:rgb(25, 25, 209) ;
+}
 .blueDiv{
   background-color: blue;
   width:60rem;

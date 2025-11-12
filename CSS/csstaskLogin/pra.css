@@ -1,0 +1,75 @@
+body{
+    background-color: aqua;
+    background-image: url(casey-horner-O0R5XZfKUGQ-unsplash.jpg);
+}
+#text{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#box{
+    background-color:aliceblue;
+    border: 1px solid black;
+    border: transparent;
+    width: 400px;
+    height: 400px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+#inputs{
+padding: 10px;
+}
+
+
+#email input{
+    border: none;
+    background: none;
+
+}
+#password{
+    padding: 10px;
+        padding: 0 10px;
+    border-bottom: 1px solid black;
+ margin-bottom: 15px;
+
+}
+#pass{
+   border:none;
+    background-color: none;
+
+}
+#email{
+    margin-bottom:15px;
+    padding: 0 10px;
+    border-bottom: 1px solid black;
+}
+
+
+#rem{
+    
+    margin-right: 100px;
+}
+button{
+    margin: 10px;
+    width: 300px;
+ background-color: blue;
+ border: 1px solid black;
+ padding:8px ;
+    border-radius: 7px;
+    color: antiquewhite;
+     
+}
+#bt{
+    text-align: center;
+}
+#lo{
+    text-decoration: underline;
+    text-decoration-color: blue;
+}
+#sign{
+    margin-left: 50px;
+}

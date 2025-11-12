@@ -1,0 +1,18 @@
+#mainDiv{
+    border: 1px solid black;
+    width: 700px;
+    height: 700px;
+    background-color: greenyellow;
+    justify-content: space-between; 
+    display: flex;
+    gap: 2px;
+    align-items:start ;
+    align-items: center;
+    flex-direction: column;    
+}
+.subDiv{
+    border: 1px solid rgb(10, 9, 9);
+    width: 40px;
+    height: 40px;
+    background-color: rgb(245, 57, 229);
+}
