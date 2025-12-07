@@ -35,3 +35,36 @@ function SB_Control(){
 
     
 }
+function SB_Control2(){
+    document.getElementById("smartBulb").classList.toggle("on");
+}
+document.getElementById("c1").addEventListener("mouseenter",() =>
+{
+    fillColour("violet")
+});
+
+
+document.getElementById("c2").addEventListener("mouseenter",() =>
+{
+    fillColour("indio")
+});
+document.getElementById("c3").addEventListener("mouseenter",() =>
+{
+    fillColour("white")
+});
+document.getElementById("c4").addEventListener("mouseenter",() =>
+{
+    fillColour("blue")
+});
+document.getElementById("c5").addEventListener("mouseenter",() =>
+{
+    fillColour("green")
+});
+document.getElementById("c6").addEventListener("mouseenter",() =>
+{
+    fillColour("yellow")
+});
+document.getElementById("c7").addEventListener("mouseenter",() =>
+{
+    fillColour("orange")
+});
