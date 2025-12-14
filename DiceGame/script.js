@@ -18,31 +18,31 @@ function p1Play() {
 
   switch (DF) {
     case 1: {
-      document.getElementById("p1dice").src = "./images/1.png";
+      document.getElementById("p1dice").src = "./image/1.png";
       break;
     }
     case 2: {
-      document.getElementById("p1dice").src = "./images/2.png";
+      document.getElementById("p1dice").src = "./image/2.png";
       break;
     }
     case 3: {
-      document.getElementById("p1dice").src = "./images/3.png";
+      document.getElementById("p1dice").src = "./image/3.png";
       break;
     }
     case 4: {
-      document.getElementById("p1dice").src = "./images/4.png";
+      document.getElementById("p1dice").src = "./image/4.png";
       break;
     }
     case 5: {
-      document.getElementById("p1dice").src = "./images/5.png";
+      document.getElementById("p1dice").src = "./image/5.png";
       break;
     }
     case 6: {
-      document.getElementById("p1dice").src = "./images/6.png";
+      document.getElementById("p1dice").src = "./image/6.png";
       break;
     }
     default: {
-      document.getElementById("p1dice").src = "./images/6.png";
+      document.getElementById("p1dice").src = "./image/6.png";
     }
   }
 
@@ -64,7 +64,7 @@ function p2Play() {
 
   //   shortCut ot SwitchCase
 
-  document.getElementById("p1dice").src = `./images/${DF}.png`
+  document.getElementById("p1dice").src = `./image/${DF}.png`
 
   if (DF === 6) {
     document.getElementById("rolldice1").disabled = false;
