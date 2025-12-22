@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="bg-primary p-2 fs-4 fw-bold text-light text-center">
+      Mausam k haal 😳🥶🥵🌈
+    </div>
+    <main>
+      <div class="container w-50 border p-3 shadow mt-3">
+        <div class="d-flex gap-3 ">
+          <input type="text"
+           name="city" id="city" 
+           placeholder="City name " 
+           class="form-control"/>
+           
+          <button class="btn btn-primary" onclick="getWeather()">
+            Get Weather
+          </button>
+        </div>
+        <div class="mt-lg-3" id="box"></div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
