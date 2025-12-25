@@ -1,3 +1,4 @@
+// Javascripit Notes
 // Javascrit variable 
 // Varaable ? > Container to store data values
 /* Multiline */
@@ -112,19 +113,36 @@ if(age<10){
 
 let myArr = ["Fan", "Yugant", 32,null,true]
 // Array Method
-console.log(myArr.length);
+// console.log(myArr.length);
 // myArr.pop();  // pop ma pecha sa ak nikala g (variable) 
 // myArr.push("Yugant");// Add ho gya yugant push kr diya array m
 // myArr.shift()// first word nikal gya "Fan"
 // myArr.unshift("fan") // Add on kr diya first line ma
 // console.log(myArr.unshift("Yugant"));  // add word new array ki length return kr de ga
-const newLen = myArr.unshift("Yugant")  // same work new array ki length return 5+1=6 {upper wla jesa same work kra ga}
-console.log(newLen);// arrat=y Method
-console.log(myArr);
+// const newLen = myArr.unshift("Yugant")  // same work new array ki length return 5+1=6 {upper wla jesa same work kra ga}
+// console.log(newLen);// arrat=y Method
+// console.log(myArr);
 
 
+// String Method in Javascripit
+let myloveString = "hey my name is yugant"   // index k hesab sa bhi bta ha space bhi genta haoi
+// console.log(myloveString.length);
 
+// console.log(myloveString.indexOf("yugant"))// yugant ko gina 0 index sa to jhasa sa start hu hau yuga. vha sa first ka answer ha stating index ka 
+// konsa index sa start ho rha h
+// console.log(myloveString.lastIndexOf ("yugant")) // last k show
 
+// console.log(myloveString.slice(4,21))// index k sath show kr rha hai
 
+d = myloveString.replace("yugant" , "Riya")
+// console.log(d ,myloveString); // Replace 
+
+// let myDate = new Date();
+// console.log(myDate.getTime())
+// console.log(myDate.getFullYear())
+// console.log(myDate.getMinutes())
+
+// DOM Manipulation
+let elem = document.getElementById('click')
 
 
