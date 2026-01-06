@@ -1,4 +1,5 @@
 import React from "react";
+import { Toast } from "bootstrap/dist/js/bootstrap.min"; 
 
 const Home = () => {
   return (
