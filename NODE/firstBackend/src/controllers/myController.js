@@ -34,12 +34,13 @@ export const UserLogin = async (req, res) => {
 
         }
         const existingUser = await User.find({ email });
-        if (!existingUser) {
+        if (!existingUser) {wh
             res.status(404).json({ message: "User Not Found" })
 
         }
         const isVerified = password === existingUser.password;
- if (!isVerified) {
+ if (!isVerified) 
+    {
             res.status(402).json({ message: "User Not Authorized" })
  }
 
