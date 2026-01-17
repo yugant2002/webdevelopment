@@ -4,7 +4,7 @@ import api from "../config/Api";
 
 
 
-const Register = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
