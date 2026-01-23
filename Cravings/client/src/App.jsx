@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import { Toaster } from "react-hot-toast";
 import UserDashboard from "./pages/dashboards/UserDashboard";
 
+
 const App = () => {
   return (
     <>
