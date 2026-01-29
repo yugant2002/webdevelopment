@@ -18,8 +18,8 @@ const UserDashboard = () => {
           <SideBar
             active={active}
             setActive={setActive}
-            show={show}
-            setShow={setShow}
+            isCollapsed={show}
+            setIsCollapsed={setShow} 
           />
         </div>
         <div className="border border-amber-700 duration-400 grow">

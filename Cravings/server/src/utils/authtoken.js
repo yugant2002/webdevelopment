@@ -1,8 +1,6 @@
 import jwt from 'jsonwebtoken';
-
 export const genToken =  (user,res) =>{
     try {
-
 
         const payload = {
         id:user._id,

@@ -1,159 +1,114 @@
-import React from 'react'
-import { useAuth } from '../../../context/AuthContext';
+import React, { useState } from "react";
+import { useAuth } from "../../../context/AuthContext";
+import api from "../../../config/Api";
 
+const EditProfileModal = ({ onClose }) => {
+  const { user, setUser } = useAuth();
+  const [formData, setFormData] = useState({
+    fullName: user.fullName,
+    email: user.email,
+    mobileNumber: user.mobileNumber,
+  });
 
-const EditProfileModal = ({onClose}) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("form Submitted");
+    console.log(formData);
+
+    try {
+      const res = await api.put("/user/update", formData);
+      sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data));
+      setUser(res.data.data);
+      setIsLogin(true);
+      // sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data));
+    } catch (error) {
+      console.log(error);
+    } finally {
+      onClose();
+    }
+  };
+
   return (
-   <>
-  
-        <div className="fixed bg-black/80 inset-0 flex items-center justify-center">
-        <div className="bg-white max-h-[85vh] w-5xl overflow-y-auto z-100">
-          <div
-            className="min-h-screen flex items-center justify-center"
-            style={{ backgroundColor: "var(--color-background)" }}
-          >
-            <button className="absolute right-0 top-0 text-white" onClick={() => onClose()}>
-            <X />
-          </button>
-            <div
-              className="w-full max-w-lg rounded-2xl shadow-xl p-8"
-              style={{ backgroundColor: "var(--color-surface)" }}
+    <>
+      <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-100">
+        <div className="bg-white w-5xl max-h-[85vh] overflow-y-auto">
+          <div className="flex justify-between px-5 py-3 border-b border-gray-300 items-center">
+            <div>EditProfileModal</div>
+            <button
+              onClick={() => onClose()}
+              className="text-red-600 hover:text-red-900 text-2xl"
             >
-              {/* Header */}
-              <h2
-                className="text-3xl font-bold text-center mb-2"
-                style={{ color: "var(--color-text-primary)" }}
-              >
-                Edit Profile
-              </h2>
-              <p
-                className="text-center mb-6"
-                style={{ color: "var(--color-text-secondary)" }}
-              >
-                Update your personal information
-              </p>
-
-              {/* Form */}
-              <form className="space-y-5">
-                {/* Name */}
+              ⊗
+            </button>
+          </div>
+          <div>
+            <form onSubmit={handleSubmit}>
+              <div className="p-6 space-y-4">
                 <div>
-                  <label
-                    className="text-sm font-medium"
-                    style={{ color: "var(--color-text-secondary)" }}
-                  >
+                  <label className="block text-sm font-medium text-gray-700">
                     Full Name
                   </label>
-                  <div
-                    className="mt-1 flex items-center gap-2 rounded-lg border px-3 py-2"
-                    style={{ borderColor: "var(--color-accent-soft)" }}
-                  >
-                    <User size={18} style={{ color: "var(--color-primary)" }} />
-                    <input
-                      type="text"
-                      placeholder="Your name"
-                      className="w-full bg-transparent outline-none"
-                      style={{ color: "var(--color-text-primary)" }}
-                    />
-                  </div>
+                  <input
+                    type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={(e) =>
+                      setFormData({ ...formData, fullName: e.target.value })
+                    }
+                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+                  />
                 </div>
-
-                {/* Email */}
                 <div>
-                  <label
-                    className="text-sm font-medium"
-                    style={{ color: "var(--color-text-secondary)" }}
-                  >
-                    Email Address
+                  <label className="block text-sm font-medium text-gray-700">
+                    Email
                   </label>
-                  <div
-                    className="mt-1 flex items-center gap-2 rounded-lg border px-3 py-2"
-                    style={{ borderColor: "var(--color-accent-soft)" }}
-                  >
-                    <Mail size={18} style={{ color: "var(--color-primary)" }} />
-                    <input
-                      type="email"
-                      placeholder="you@example.com"
-                      className="w-full bg-transparent outline-none"
-                      style={{ color: "var(--color-text-primary)" }}
-                    />
-                  </div>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 cursor-not-allowed "
+                    disabled
+                  />
                 </div>
-
-                {/* Phone */}
                 <div>
-                  <label
-                    className="text-sm font-medium"
-                    style={{ color: "var(--color-text-secondary)" }}
-                  >
-                    Phone Number
+                  <label className="block text-sm font-medium text-gray-700">
+                    Mobile Number
                   </label>
-                  <div
-                    className="mt-1 flex items-center gap-2 rounded-lg border px-3 py-2"
-                    style={{ borderColor: "var(--color-accent-soft)" }}
-                  >
-                    <Phone
-                      size={18}
-                      style={{ color: "var(--color-primary)" }}
-                    />
-                    <input
-                      type="tel"
-                      placeholder="9876543210"
-                      className="w-full bg-transparent outline-none"
-                      style={{ color: "var(--color-text-primary)" }}
-                    />
-                  </div>
+                  <input
+                    type="text"
+                    name="mobileNumber"
+                    value={formData.mobileNumber}
+                    onChange={(e) =>
+                      setFormData({ ...formData, mobileNumber: e.target.value })
+                    }
+                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+                  />
                 </div>
-
-                {/* Password */}
-                <div>
-                  <label
-                    className="text-sm font-medium"
-                    style={{ color: "var(--color-text-secondary)" }}
-                  >
-                    New Password
-                  </label>
-                  <div
-                    className="mt-1 flex items-center gap-2 rounded-lg border px-3 py-2"
-                    style={{ borderColor: "var(--color-accent-soft)" }}
-                  >
-                    <Lock size={18} style={{ color: "var(--color-primary)" }} />
-                    <input
-                      type="password"
-                      placeholder="••••••••"
-                      className="w-full bg-transparent outline-none"
-                      style={{ color: "var(--color-text-primary)" }}
-                    />
-                  </div>
-                </div>
-
-                {/* Save Button */}
+              </div>
+              <div className="px-6 py-6 flex justify-end space-x-4 border-t border-gray-300">
+                <button
+                  type="button"
+                  onClick={() => onClose()}
+                  className="px-4 py-2 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 transition"
+                >
+                  Cancel
+                </button>
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 rounded-lg py-3 font-semibold transition"
-                  style={{
-                    backgroundColor: "var(--color-primary)",
-                    color: "#fff",
-                  }}
-                  onMouseOver={(e) =>
-                    (e.currentTarget.style.backgroundColor =
-                      "var(--color-primary-hover)")
-                  }
-                  onMouseOut={(e) =>
-                    (e.currentTarget.style.backgroundColor =
-                      "var(--color-primary)")
-                  }
+                  className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
                 >
-                  <Save size={18} />
                   Save Changes
-                  </button>
-                </form>
+                </button>
               </div>
-            </div>
+            </form>
           </div>
-         </div>   
-
- </>
+        </div>
+      </div>
+    </>
   );
 };
 
-export default EditProfileModal
+export default EditProfileModal;

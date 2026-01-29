@@ -1,15 +1,15 @@
 import User from "../models/userModel.js";
 import bcrypt from "bcrypt";
-import { genToken } from "../../utils/authtoken.js";
+import { genToken } from "../utils/authtoken.js";
 
 export const UserRegister = async (req, res, next) => {
   try {
     console.log(req.body);
     //accept data from Frontend
-    const { fullName, email, mobileNumber, password } = req.body;
+    const { fullName, email, mobileNumber, password, role } = req.body;
 
     //verify that all data exist
-    if (!fullName || !email || !mobileNumber || !password) {
+    if (!fullName || !email || !mobileNumber || !password || !role) {
       const error = new Error("All feilds required");
       error.statusCode = 400;
       return next(error);
@@ -33,12 +33,19 @@ export const UserRegister = async (req, res, next) => {
 
     console.log("Password Hashing Done. hashPassword = ", hashPassword);
 
+    const photoURL = 'https://placehold.co/600x400?text=${fullName.charAt(0).toUpperCase()}';
+    const photo = {
+      URL:photoURL,
+    }
+
     //save data to database
     const newUser = await User.create({
       fullName,
       email,
       mobileNumber,
       password: hashPassword,
+      role,
+      photo,
     });
 
     // send response to Frontend
@@ -77,8 +84,9 @@ export const UserLogin = async (req, res, next) => {
       error.statusCode = 401;
       return next(error);
     }
-// Token Generation will be Done
- genToken(existingUser,res);
+
+    //Token Generation will be done here
+    genToken(existingUser, res);
 
     //send message to Frontend
     res.status(200).json({ message: "Login Successfull", data: existingUser });
@@ -90,6 +98,7 @@ export const UserLogin = async (req, res, next) => {
 
 export const UserLogout = async (req, res, next) => {
   try {
+    res.clearCookie("parleG")
     res.status(200).json({ message: "Logout Successfull" });
   } catch (error) {
     next(error);
