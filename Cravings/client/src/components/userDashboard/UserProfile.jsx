@@ -3,11 +3,13 @@ import { useAuth } from "../../context/AuthContext";
 import EditProfileModel from "./modals/EditProfileModal";
 import UserImage from "../../assets/userImage.jpg";
 import { FaCamera } from "react-icons/fa";
-import api from "../../config/API";
+import api from "../../config/Api";
 import {toast} from "react-hot-toast";
 
 const UserProfile = () => {
   const { user, setUser } = useAuth();
+  console.log(user);
+
   const [isEditProfileModalOpen, setIsEditProfileModalOpen] = useState(false);
   const [preview, setPreview] = useState("");
 
@@ -36,8 +38,10 @@ const UserProfile = () => {
     const newPhotoURL = URL.createObjectURL(file);
     console.log(newPhotoURL);
     setPreview(newPhotoURL);
+    setTimeout(() => {
     changePhoto(file);
-  };
+  }, 5000);
+};
 
   return (
     <>
@@ -52,7 +56,7 @@ const UserProfile = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute bottom-2 left-[75%] border bg-white p-2 rounded-full group flex gap-3">
+              <div className="absolute bottom-2 left-[75%] border bg-white p-2 rounded-000000full group flex gap-3">
                 <label
                   htmlFor="imageUpload"
                   className="text-(--color-primary) group-hover:text-(--color-secondary)"
@@ -81,7 +85,10 @@ const UserProfile = () => {
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <button className="px-4 py-2 rounded bg-(--color-secondary) text-white">
+            <button 
+            className="px-4 py-2 rounded bg-(--color-secondary) text-white"
+            onClick={() => setIsEditProfileModalOpen(true)}
+            >
               Edit
             </button>
             <button className="px-4 py-2 rounded bg-(--color-secondary) text-white">
